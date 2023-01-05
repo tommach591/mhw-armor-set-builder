@@ -1,0 +1,55 @@
+.Armory {
+  width: 100%;
+  height: 90%;
+
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.RankContainer {
+  width: 100%;
+  height: 4%;
+
+  display: flex;
+  align-items: flex-end;
+
+  margin-top: 1rem;
+}
+
+.Rank {
+  width: 7rem;
+  height: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  border-radius: 5px 5px 0px 0px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Rank > h2 {
+  color: white;
+}
+
+.ArmorSets {
+  height: 89%;
+  overflow-y: auto;
+  border-top: 1px solid white;
+  padding: 0.95rem;
+}
+
+.Set {
+  display: flex;
+  align-items: center;
+}
+
+.SetName {
+  width: 12.5rem;
+  color: white;
+}

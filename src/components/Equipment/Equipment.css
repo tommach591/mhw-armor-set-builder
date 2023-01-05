@@ -1,0 +1,22 @@
+.Equipment {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+
+  margin: 0.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Equipment:hover {
+  border: 1px solid greenyellow;
+  box-shadow: 0px 0px 2px 2px greenyellow;
+  cursor: pointer;
+}
+
+.Equipment > img {
+  width: 95%;
+  height: 95%;
+}
