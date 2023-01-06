@@ -26,7 +26,13 @@ function Weaponry() {
   );
 
   useEffect(() => {
-    setDisplay(weaponList.filter((weapon) => weapon.type === type));
+    setDisplay(
+      weaponList
+        .filter((weapon) => weapon.type === type)
+        .sort((a, b) => {
+          return a.rarity - b.rarity;
+        })
+    );
   }, [type, weaponList]);
 
   return (
