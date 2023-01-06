@@ -110,39 +110,39 @@ export function getIcon(type, rarity) {
 const weaponTypes = new Map();
 weaponTypes.set(
   "fire",
-  "https://cdn.discordapp.com/emojis/670837574742573056.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/fireblight.png"
 );
 weaponTypes.set(
   "water",
-  "https://cdn.discordapp.com/emojis/670837574725664768.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/waterblight.png"
 );
 weaponTypes.set(
   "thunder",
-  "https://cdn.discordapp.com/emojis/670837574553567234.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/thunderblight.png"
 );
 weaponTypes.set(
   "ice",
-  "https://cdn.discordapp.com/emojis/670837574666944513.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Iceblight.png"
 );
 weaponTypes.set(
   "dragon",
-  "https://cdn.discordapp.com/emojis/670837574650298368.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/DragonBlight.png"
 );
 weaponTypes.set(
   "poison",
-  "https://cdn.discordapp.com/emojis/835253545481404457.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Poison.png"
 );
 weaponTypes.set(
   "paralysis",
-  "https://cdn.discordapp.com/emojis/835253567286673468.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Paralysis.png"
 );
 weaponTypes.set(
   "sleep",
-  "https://cdn.discordapp.com/emojis/402184869624676353.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Sleep.png"
 );
 weaponTypes.set(
   "blast",
-  "https://cdn.discordapp.com/emojis/835253654881304626.webp"
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Blastblight.png"
 );
 
 export function getWeaponTypeIcon(type) {

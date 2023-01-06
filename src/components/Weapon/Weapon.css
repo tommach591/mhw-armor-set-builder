@@ -61,6 +61,16 @@
   border-bottom: 1px dashed gray;
 }
 
+.WeaponAtkLabel {
+  display: flex;
+  justify-content: center;
+}
+
+.WeaponAtkIcon {
+  width: 0.8rem;
+  margin-right: 0.5rem;
+}
+
 .AttackValue {
   width: 6.5rem;
   text-align: right;
@@ -134,6 +144,16 @@
   padding-bottom: 0.1rem;
   border-bottom: 1px dashed gray;
   margin-bottom: 0.25rem;
+}
+
+.AttributeLabel {
+  display: flex;
+  justify-content: center;
+}
+
+.AttributeIcon {
+  width: 1rem;
+  margin-right: 0.5rem;
 }
 
 .AttributeValue {

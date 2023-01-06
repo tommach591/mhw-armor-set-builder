@@ -57,7 +57,18 @@ function Weapon({ weaponObj }) {
       if (value !== 0 && (key === "defense" || key === "affinity"))
         attributes.push(
           <div className="Attribute" key={key}>
-            <h2>{key === "defense" ? "🛡️ Defense" : "🔪 Affinity"}</h2>
+            <h2 className="AttributeLabel">
+              <img
+                className="AttributeIcon"
+                src={
+                  key === "defense"
+                    ? "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-defense_s.png"
+                    : "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-affinity.png"
+                }
+                alt=""
+              />
+              {key === "defense" ? "Defense" : "Affinity"}
+            </h2>
             <h2 className="AttributeValue">
               {key === "defense" ? `${value}` : `${value}%`}
             </h2>
@@ -92,7 +103,14 @@ function Weapon({ weaponObj }) {
         </div>
         <div className="WeaponLeft">
           <div className="WeaponAtk">
-            <h2>{"⚔️ Attack "}</h2>
+            <h2 className="WeaponAtkLabel">
+              <img
+                className="WeaponAtkIcon"
+                src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-attack.png"
+                alt=""
+              />
+              {"Attack "}
+            </h2>
             <h2 className="AttackValue">{`${weaponObj.attack.display}`}</h2>
           </div>
           <div className="WeaponSharpness">
