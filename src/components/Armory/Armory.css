@@ -33,6 +33,10 @@
   margin-right: auto;
 }
 
+.Rank:hover {
+  cursor: pointer;
+}
+
 .Rank > h2 {
   color: white;
 }

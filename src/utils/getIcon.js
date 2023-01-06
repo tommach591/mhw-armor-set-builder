@@ -106,3 +106,60 @@ export function getIcon(type, rarity) {
       return "";
   }
 }
+
+const weaponTypes = new Map();
+weaponTypes.set(
+  "fire",
+  "https://cdn.discordapp.com/emojis/670837574742573056.webp"
+);
+weaponTypes.set(
+  "water",
+  "https://cdn.discordapp.com/emojis/670837574725664768.webp"
+);
+weaponTypes.set(
+  "thunder",
+  "https://cdn.discordapp.com/emojis/670837574553567234.webp"
+);
+weaponTypes.set(
+  "ice",
+  "https://cdn.discordapp.com/emojis/670837574666944513.webp"
+);
+weaponTypes.set(
+  "dragon",
+  "https://cdn.discordapp.com/emojis/670837574650298368.webp"
+);
+weaponTypes.set(
+  "poison",
+  "https://cdn.discordapp.com/emojis/835253545481404457.webp"
+);
+weaponTypes.set(
+  "paralysis",
+  "https://cdn.discordapp.com/emojis/835253567286673468.webp"
+);
+weaponTypes.set(
+  "sleep",
+  "https://cdn.discordapp.com/emojis/402184869624676353.webp"
+);
+weaponTypes.set(
+  "blast",
+  "https://cdn.discordapp.com/emojis/835253654881304626.webp"
+);
+
+export function getWeaponTypeIcon(type) {
+  return weaponTypes.get(type);
+}
+
+export function getSlotIcon(level) {
+  switch (level) {
+    case 1:
+      return "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/gem_level_1.png";
+    case 2:
+      return "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/gem_level_2.png";
+    case 3:
+      return "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/gem_level_3.png";
+    case 4:
+      return "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/decoration_level_4_mhw_wiki.png";
+    default:
+      return "";
+  }
+}

@@ -1,0 +1,182 @@
+.Weapon {
+  height: 8rem;
+  display: flex;
+  margin: 1rem;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 3px double white;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.WeaponName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  color: white;
+  background: rgb(87, 87, 87);
+
+  padding: 0.25rem;
+}
+
+.WeaponStats {
+  display: flex;
+}
+
+.WeaponIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+.WeaponIcon > img {
+  width: 95%;
+  height: 95%;
+}
+
+.WeaponLeft {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-top: 0.6rem;
+}
+
+.WeaponAtk {
+  display: flex;
+  color: white;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed gray;
+}
+
+.AttackValue {
+  width: 6.5rem;
+  text-align: right;
+}
+
+.WeaponSharpness {
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
+
+.SharpnessBar {
+  width: 6rem;
+  height: 0.5rem;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+
+  padding: 0.05rem;
+  margin: 0.5rem;
+}
+
+.Sharpnessred {
+  height: 100%;
+  background: rgb(204, 0, 0);
+}
+
+.Sharpnessorange {
+  height: 100%;
+  background: rgb(255, 136, 0);
+}
+
+.Sharpnessyellow {
+  height: 100%;
+  background: rgb(255, 187, 51);
+}
+
+.Sharpnessgreen {
+  height: 100%;
+  background: rgb(0, 200, 81);
+}
+
+.Sharpnessblue {
+  height: 100%;
+  background: rgb(13, 71, 161);
+}
+
+.Sharpnesswhite {
+  height: 100%;
+  background: white;
+}
+
+.Sharpnesspurple {
+  height: 100%;
+  background: rgb(153, 51, 204);
+}
+
+.WeaponRight {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-top: 0.6rem;
+}
+
+.Attribute {
+  display: flex;
+  color: white;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed gray;
+  margin-bottom: 0.25rem;
+}
+
+.AttributeValue {
+  width: 6.5rem;
+  text-align: right;
+}
+
+.Element {
+  display: flex;
+  color: white;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed gray;
+  margin-bottom: 0.25rem;
+}
+
+.ElementType {
+  width: 4.75rem;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+}
+
+.ElementIcon {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.ElementValue {
+  width: 6.5rem;
+  text-align: right;
+}
+
+.WeaponSlots {
+  display: flex;
+
+  position: absolute;
+  left: 0rem;
+  bottom: 0rem;
+
+  margin: 0.5rem;
+}
+
+.WeaponSlots > img {
+  width: 1.75rem;
+}

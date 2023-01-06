@@ -1,0 +1,17 @@
+.Wallpaper > img {
+  width: 100%;
+
+  position: absolute;
+  opacity: 0.75;
+}
+
+.Dropdown {
+  position: absolute;
+  right: 0rem;
+
+  margin: 1rem;
+}
+
+.Dropdown > label {
+  color: white;
+}

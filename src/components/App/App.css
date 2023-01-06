@@ -8,13 +8,6 @@
   overflow: hidden;
 }
 
-.App > img {
-  width: 100%;
-
-  position: absolute;
-  opacity: 0.75;
-}
-
 .Loading {
   width: 100vw;
   height: 100vh;

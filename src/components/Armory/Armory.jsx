@@ -5,7 +5,7 @@ import {
   useLowArmor,
   useMasterArmor,
 } from "../../utils/ArmoryContext";
-import Equipment from "../Equipment";
+import Armor from "../Armor";
 
 function Armory() {
   const lowArmor = useLowArmor();
@@ -21,10 +21,10 @@ function Armory() {
     let j = 0;
     for (let i = 0; i < types.length; i++) {
       if (j < pieces.length && types[i] === pieces[j].type) {
-        row.push(<Equipment equipmentObject={pieces[j]} key={i} />);
+        row.push(<Armor armorObj={pieces[j]} key={i} />);
         j++;
       } else {
-        row.push(<Equipment equipmentObject={null} key={i} />);
+        row.push(<Armor armorObj={null} key={i} />);
       }
     }
 

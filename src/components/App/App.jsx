@@ -1,13 +1,14 @@
 import "./App.css";
 import { useDoneLoading } from "../../utils/ArmoryContext";
 import Smithy from "../Smithy";
+import Wallpaper from "../Wallpaper";
 
 function App() {
   const doneLoading = useDoneLoading();
 
   return doneLoading ? (
     <div className="App">
-      <img src="https://images6.alphacoders.com/101/1012987.jpg" alt="" />
+      <Wallpaper />
       <Smithy />
     </div>
   ) : (

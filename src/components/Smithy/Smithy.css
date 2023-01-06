@@ -27,6 +27,92 @@
   margin-right: auto;
 }
 
+.Tab:hover {
+  cursor: pointer;
+}
+
 .Tab > h2 {
   color: white;
+}
+
+@keyframes Sparkle10 {
+  from {
+    border: 3px dotted rgb(53, 122, 251);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  to {
+    border: 3px dotted rgb(53, 122, 251);
+    transform: rotate(0deg);
+  }
+}
+
+.Rarity10 {
+  width: 80%;
+  height: 80%;
+
+  position: absolute;
+  border-radius: 50%;
+}
+
+.Rarity10:hover {
+  animation: Sparkle10 8s linear infinite;
+}
+
+@keyframes Sparkle11 {
+  from {
+    border: 3px dotted rgb(255, 208, 127, 1);
+    box-shadow: 0px 0px 5px rgb(255, 208, 127, 1);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  to {
+    border: 3px dotted rgb(255, 208, 127, 1);
+    box-shadow: 0px 0px 5px rgb(255, 208, 127, 1);
+    transform: rotate(0deg);
+  }
+}
+
+.Rarity11 {
+  width: 75%;
+  height: 75%;
+
+  position: absolute;
+  border-radius: 50%;
+}
+
+.Rarity11:hover {
+  animation: Sparkle11 10s linear infinite;
+}
+
+@keyframes Sparkle12 {
+  from {
+    border: 3px dotted rgba(197, 239, 255, 1);
+    box-shadow: 0px 0px 15px rgba(197, 239, 255, 1);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  to {
+    border: 3px dotted rgba(197, 239, 255, 1);
+    box-shadow: 0px 0px 15px rgba(197, 239, 255, 1);
+    transform: rotate(0deg);
+  }
+}
+
+.Rarity12 {
+  width: 70%;
+  height: 70%;
+
+  position: absolute;
+  border-radius: 50%;
+}
+
+.Rarity12:hover {
+  animation: Sparkle12 10s linear infinite;
 }

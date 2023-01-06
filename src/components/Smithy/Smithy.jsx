@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Armory from "../Armory";
+import Weaponry from "../Weaponry/Weaponry";
 import "./Smithy.css";
 
 function Smithy() {
@@ -13,7 +14,7 @@ function Smithy() {
   const displaySmithy = () => {
     switch (tab) {
       case WEAPON:
-        return <div />;
+        return <Weaponry />;
       case ARMOR:
         return <Armory />;
       case TALISMAN:
