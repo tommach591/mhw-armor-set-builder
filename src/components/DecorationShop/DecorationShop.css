@@ -1,4 +1,4 @@
-.Weaponry {
+.DecorationShop {
   width: 100%;
   height: 90%;
 
@@ -6,7 +6,7 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-.SelectWeaponType {
+.DecorationShopTitle {
   width: 100%;
   height: 4%;
 
@@ -15,14 +15,10 @@
   justify-content: center;
 
   margin-top: 1rem;
-}
-
-.SelectWeaponType > label {
   color: white;
-  margin-right: 0.5rem;
 }
 
-.WeaponList {
+.DecorationList {
   height: 89%;
   overflow-y: auto;
   border-top: 1px solid white;

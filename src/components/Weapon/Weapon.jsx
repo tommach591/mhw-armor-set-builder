@@ -1,8 +1,16 @@
-import { getWeaponTypeIcon, getSlotIcon } from "../../utils/getIcon";
+import {
+  getWeaponIcon,
+  getWeaponTypeIcon,
+  getSlotIcon,
+} from "../../utils/Icon";
 import "./Weapon.css";
 
-function Weapon({ weaponObj }) {
-  const getSharpness = (sharpness) => {
+function Weapon({ weaponObj, handleSetInfo }) {
+  const handleMouseOver = () => {
+    handleSetInfo("weapon", weaponObj);
+  };
+
+  const Sharpness = (sharpness) => {
     const colors = [];
     for (const [key, value] of Object.entries(sharpness)) {
       colors.push(
@@ -19,7 +27,7 @@ function Weapon({ weaponObj }) {
     return <div className="SharpnessBar">{colors}</div>;
   };
 
-  const getElements = () => {
+  const Elements = () => {
     const element = [];
 
     for (let i = 0; i < weaponObj.elements.length; i++) {
@@ -50,7 +58,7 @@ function Weapon({ weaponObj }) {
     return element;
   };
 
-  const getAttributes = () => {
+  const Attributes = () => {
     const attributes = [];
 
     for (const [key, value] of Object.entries(weaponObj.attributes)) {
@@ -79,7 +87,7 @@ function Weapon({ weaponObj }) {
     return attributes;
   };
 
-  const getSlots = () => {
+  const Slots = () => {
     const slots = [];
 
     for (let i = 0; i < weaponObj.slots.length; i++) {
@@ -91,13 +99,20 @@ function Weapon({ weaponObj }) {
     return slots;
   };
 
+  if (
+    weaponObj.name === "Hazak Velos 1" ||
+    weaponObj.name === "Hazak Velos 2"
+  ) {
+    weaponObj.rarity = 7;
+  }
+
   return (
-    <div className="Weapon">
+    <div className="Weapon" onMouseOver={() => handleMouseOver()}>
       <div className="WeaponName">{weaponObj.name}</div>
       <div className="WeaponStats">
         <div className="WeaponIcon">
           <img
-            src={weaponObj.assets ? weaponObj.assets.icon : ""}
+            src={getWeaponIcon(weaponObj.type, weaponObj.rarity)}
             alt={weaponObj.rarity}
           />
         </div>
@@ -113,17 +128,21 @@ function Weapon({ weaponObj }) {
             </h2>
             <h2 className="AttackValue">{`${weaponObj.attack.display}`}</h2>
           </div>
-          <div className="WeaponSharpness">
-            Sharpness
-            {getSharpness(weaponObj.durability[0])}
-          </div>
+          {weaponObj.durability ? (
+            <div className="WeaponSharpness">
+              Sharpness
+              {Sharpness(weaponObj.durability[0])}
+            </div>
+          ) : (
+            <div />
+          )}
         </div>
         <div className="WeaponRight">
-          {getElements()}
-          {getAttributes()}
+          {Elements()}
+          {Attributes()}
         </div>
       </div>
-      <div className="WeaponSlots">{getSlots()}</div>
+      <div className="WeaponSlots">{Slots()}</div>
     </div>
   );
 }

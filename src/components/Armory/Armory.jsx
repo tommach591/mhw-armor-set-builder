@@ -7,7 +7,7 @@ import {
 } from "../../utils/ArmoryContext";
 import Armor from "../Armor";
 
-function Armory() {
+function Armory({ handleSetInfo }) {
   const lowArmor = useLowArmor();
   const highArmor = useHighArmor();
   const masterArmor = useMasterArmor();
@@ -21,10 +21,14 @@ function Armory() {
     let j = 0;
     for (let i = 0; i < types.length; i++) {
       if (j < pieces.length && types[i] === pieces[j].type) {
-        row.push(<Armor armorObj={pieces[j]} key={i} />);
+        row.push(
+          <Armor key={i} armorObj={pieces[j]} handleSetInfo={handleSetInfo} />
+        );
         j++;
       } else {
-        row.push(<Armor armorObj={null} key={i} />);
+        row.push(
+          <Armor key={i} armorObj={null} handleSetInfo={handleSetInfo} />
+        );
       }
     }
 
@@ -35,7 +39,7 @@ function Armory() {
     <div className="Armory">
       <div className="RankContainer">
         <div
-          className="Rank"
+          className={display === lowArmor ? "Rank Selected" : "Rank"}
           onClick={() => {
             setDisplay(lowArmor);
           }}
@@ -43,7 +47,7 @@ function Armory() {
           <h2>Low Rank</h2>
         </div>
         <div
-          className="Rank"
+          className={display === highArmor ? "Rank Selected" : "Rank"}
           onClick={() => {
             setDisplay(highArmor);
           }}
@@ -51,7 +55,7 @@ function Armory() {
           <h2>High Rank</h2>
         </div>
         <div
-          className="Rank"
+          className={display === masterArmor ? "Rank Selected" : "Rank"}
           onClick={() => {
             setDisplay(masterArmor);
           }}

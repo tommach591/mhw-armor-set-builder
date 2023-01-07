@@ -11,3 +11,9 @@
   background: rgb(200, 200, 200);
   border-radius: 10px;
 }
+
+body {
+  font-family: Varela Round;
+  letter-spacing: -1px;
+  font-size: 16px;
+}

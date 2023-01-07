@@ -1,28 +1,22 @@
-import { getIcon } from "../../utils/getIcon";
+import { getIcon } from "../../utils/Icon";
 import Missing from "../../assets/Missing.png";
 import "./Armor.css";
 
-function Armor({ armorObj }) {
+function Armor({ armorObj, handleSetInfo }) {
   const handleMouseOver = () => {
-    console.log(armorObj);
-  };
-
-  const getSparkles = (rarity) => {
-    if (rarity >= 10) {
-      return <div className={`Rarity${rarity}`} />;
-    }
+    handleSetInfo("armor", armorObj);
   };
 
   return armorObj ? (
     <div className="Armor" onMouseOver={() => handleMouseOver()}>
-      {getSparkles(armorObj.rarity)}
+      <div className={`Rarity${armorObj.rarity}`} />
       <img
         src={getIcon(armorObj.type, armorObj.rarity)}
         alt={armorObj.rarity}
       />
     </div>
   ) : (
-    <div className="Armor">
+    <div className="Armor" onMouseOver={() => handleMouseOver()}>
       <img src={Missing} alt="X" />
     </div>
   );

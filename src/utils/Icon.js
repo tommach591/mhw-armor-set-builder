@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const HELMET = [
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/c/c3/Helmet_Icon_White.png",
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/c/c3/Helmet_Icon_White.png",
@@ -105,6 +106,46 @@ export function getIcon(type, rarity) {
     default:
       return "";
   }
+}
+
+const GS = "great-sword";
+const LS = "long-sword";
+const SnS = "sword-and-shield";
+const DB = "dual-blades";
+const HAMMER = "hammer";
+const HH = "hunting-horn";
+const LANCE = "lance";
+const GL = "gunlance";
+const SA = "switch-axe";
+const CB = "charge-blade";
+const IG = "insect-glaive";
+const LBG = "light-bowgun";
+const HBG = "heavy-bowgun";
+const BOW = "bow";
+
+export function getWeaponIcon(type, rarity) {
+  let renamedType;
+  switch (type) {
+    case GS:
+      renamedType = "greatsword";
+      break;
+    case LS:
+      renamedType = "longsword";
+      break;
+    case SnS:
+      renamedType = "sword-shield";
+      break;
+    default:
+      renamedType = type;
+      break;
+  }
+
+  if (type === IG && rarity < 9)
+    return `https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rare-${rarity}-insect-glaive-mhw_tree_tree.png`;
+  else if (rarity < 9)
+    return `https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rare-${rarity}-${renamedType}-mhw_tree.png`;
+  else
+    return `https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rare-${rarity}-mhw-${renamedType}-wiki.png`;
 }
 
 const weaponTypes = new Map();

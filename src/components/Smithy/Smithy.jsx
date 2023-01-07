@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Armory from "../Armory";
-import Weaponry from "../Weaponry/Weaponry";
+import CharmShop from "../CharmShop";
+import DecorationShop from "../DecorationShop";
+import Weaponry from "../Weaponry";
 import "./Smithy.css";
 
-function Smithy() {
+function Smithy({ handleSetInfo }) {
   const WEAPON = "weapon";
   const ARMOR = "armor";
-  const TALISMAN = "talisman";
+  const CHARM = "charm";
   const DECORATION = "decoration";
 
   const [tab, setTab] = useState(ARMOR);
@@ -14,13 +16,13 @@ function Smithy() {
   const displaySmithy = () => {
     switch (tab) {
       case WEAPON:
-        return <Weaponry />;
+        return <Weaponry handleSetInfo={handleSetInfo} />;
       case ARMOR:
-        return <Armory />;
-      case TALISMAN:
-        return <div />;
+        return <Armory handleSetInfo={handleSetInfo} />;
+      case CHARM:
+        return <CharmShop handleSetInfo={handleSetInfo} />;
       case DECORATION:
-        return <div />;
+        return <DecorationShop handleSetInfo={handleSetInfo} />;
       default:
         return <div />;
     }
@@ -31,7 +33,7 @@ function Smithy() {
       {displaySmithy()}
       <div className="TabContainer">
         <div
-          className="Tab"
+          className={tab === WEAPON ? "Tab Selected" : "Tab"}
           onClick={() => {
             setTab(WEAPON);
           }}
@@ -39,7 +41,7 @@ function Smithy() {
           <h2>Weapon</h2>
         </div>
         <div
-          className="Tab"
+          className={tab === ARMOR ? "Tab Selected" : "Tab"}
           onClick={() => {
             setTab(ARMOR);
           }}
@@ -47,15 +49,15 @@ function Smithy() {
           <h2>Armor</h2>
         </div>
         <div
-          className="Tab"
+          className={tab === CHARM ? "Tab Selected" : "Tab"}
           onClick={() => {
-            setTab(TALISMAN);
+            setTab(CHARM);
           }}
         >
-          <h2>Talisman</h2>
+          <h2>Charm</h2>
         </div>
         <div
-          className="Tab"
+          className={tab === DECORATION ? "Tab Selected" : "Tab"}
           onClick={() => {
             setTab(DECORATION);
           }}

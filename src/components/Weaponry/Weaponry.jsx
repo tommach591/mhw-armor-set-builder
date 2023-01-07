@@ -3,7 +3,7 @@ import { useWeaponList } from "../../utils/ArmoryContext";
 import Weapon from "../Weapon";
 import "./Weaponry.css";
 
-function Weaponry() {
+function Weaponry({ handleSetInfo }) {
   const weaponList = useWeaponList();
   const GS = "great-sword";
   const LS = "long-sword";
@@ -38,7 +38,7 @@ function Weaponry() {
   return (
     <div className="Weaponry">
       <div className="SelectWeaponType">
-        <label>Weapon Type: </label>
+        <label>Weapon Type:</label>
         <select
           name="type"
           onChange={(event) => {
@@ -63,7 +63,13 @@ function Weaponry() {
       </div>
       <div className="WeaponList">
         {display.map((weaponObj, i) => {
-          return <Weapon key={i} weaponObj={weaponObj} />;
+          return (
+            <Weapon
+              key={i}
+              weaponObj={weaponObj}
+              handleSetInfo={handleSetInfo}
+            />
+          );
         })}
       </div>
     </div>

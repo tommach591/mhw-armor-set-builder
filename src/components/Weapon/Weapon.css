@@ -12,13 +12,34 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
+.Weapon:hover {
+  border: 3px double greenyellow;
+  box-shadow: 0px 0px 2px 2px greenyellow;
+  cursor: pointer;
+}
+
 .WeaponName {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   color: white;
-  background: rgb(87, 87, 87);
+  background-image: linear-gradient(
+    to right,
+    rgb(87, 87, 87, 0),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87, 0)
+  );
 
   padding: 0.25rem;
 }
@@ -46,12 +67,13 @@
 }
 
 .WeaponLeft {
-  width: 12rem;
+  width: 11rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   margin-top: 0.6rem;
+  margin-right: 0.6rem;
 }
 
 .WeaponAtk {
@@ -77,6 +99,7 @@
 }
 
 .WeaponSharpness {
+  width: 100%;
   display: flex;
   align-items: center;
 
@@ -84,7 +107,7 @@
 }
 
 .SharpnessBar {
-  width: 6rem;
+  width: 100%;
   height: 0.5rem;
   border: 1px solid white;
   display: flex;
@@ -130,7 +153,7 @@
 }
 
 .WeaponRight {
-  width: 12rem;
+  width: 11rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -139,6 +162,7 @@
 }
 
 .Attribute {
+  width: 100%;
   display: flex;
   color: white;
   padding-bottom: 0.1rem;
@@ -157,11 +181,12 @@
 }
 
 .AttributeValue {
-  width: 6.5rem;
+  width: 100%;
   text-align: right;
 }
 
 .Element {
+  width: 100%;
   display: flex;
   color: white;
   padding-bottom: 0.1rem;
@@ -170,7 +195,7 @@
 }
 
 .ElementType {
-  width: 4.75rem;
+  width: 100%;
   text-align: left;
 
   display: flex;
