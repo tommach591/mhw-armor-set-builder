@@ -28,6 +28,10 @@ function App() {
   ) : (
     <div className="Loading">
       <h1>Loading...</h1>
+      <img
+        src="https://media.tenor.com/_w-E_dXPA8MAAAAC/monster-hunter-ice-borne.gif"
+        alt=""
+      />
     </div>
   );
 }
