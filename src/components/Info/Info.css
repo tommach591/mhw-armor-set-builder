@@ -45,7 +45,7 @@
   border-bottom: 1px solid white;
 }
 
-.Details {
+.InfoDetails {
   display: flex;
   flex-direction: column;
 }
@@ -178,4 +178,131 @@
 
   font-size: 32px;
   color: gray;
+}
+
+.AllInfoSkills {
+  display: flex;
+  flex-direction: column;
+}
+
+.InfoSkillsTitle {
+  width: 100%;
+  height: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0.1rem;
+  border-bottom: 1px dashed gray;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(87, 87, 87, 0),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87, 0)
+  );
+}
+
+.InfoSkill {
+  width: 100%;
+  height: 3rem;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(87, 87, 87, 0),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87, 0)
+  );
+  color: white;
+
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.SkillName {
+  margin: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 18px;
+}
+
+.SkillLevel {
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(
+    to right,
+    rgb(25, 25, 25, 0),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25),
+    rgb(25, 25, 25, 0)
+  );
+}
+
+.SkillLevel > * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.SkillSlotRank {
+  display: flex;
+}
+
+.SkillRank {
+  width: 0.5rem;
+  height: 0.5rem;
+
+  margin: 0.1rem;
+  border: 1px solid rgb(168, 168, 168);
+}
+
+.Filled {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 235, 54),
+    rgb(151, 121, 21)
+  );
+}
+
+.Empty {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(182, 182, 182),
+    rgb(99, 99, 99)
+  );
+}
+
+.SkillSlotLevel {
+  margin-left: auto;
 }

@@ -1,8 +1,4 @@
-import {
-  getWeaponIcon,
-  getWeaponTypeIcon,
-  getSlotIcon,
-} from "../../utils/Icon";
+import { getWeaponIcon, getElementType, getSlotIcon } from "../../utils/Icon";
 import "./Weapon.css";
 
 function Weapon({ weaponObj, handleSetInfo }) {
@@ -38,11 +34,7 @@ function Weapon({ weaponObj, handleSetInfo }) {
             className="ElementType"
             style={e.hidden ? { color: "white" } : { color: "gray" }}
           >
-            <img
-              className="ElementIcon"
-              src={getWeaponTypeIcon(e.type)}
-              alt=""
-            />
+            <img className="ElementIcon" src={getElementType(e.type)} alt="" />
             {e.type.slice(0, 1).toUpperCase() + e.type.slice(1)}
           </h2>
           <h2

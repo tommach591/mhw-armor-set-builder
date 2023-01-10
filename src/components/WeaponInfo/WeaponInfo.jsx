@@ -1,26 +1,13 @@
 import {
   getSlotIcon,
+  getStatIcon,
   getWeaponIcon,
-  getWeaponTypeIcon,
+  getElementType,
+  rarityColor,
 } from "../../utils/Icon";
 import "./WeaponInfo.css";
 
 function WeaponInfo({ info }) {
-  const rarityColor = [
-    "white",
-    "white",
-    "rgb(162,187,70)",
-    "rgb(89,153,106)",
-    "rgb(156,223,248)",
-    "rgb(103,100,215)",
-    "rgb(114,29,124)",
-    "rgb(198,121,74)",
-    "rgb(190,66,74)",
-    "rgb(79,210,245)",
-    "rgb(203,165,82)",
-    "rgb(212,237,249)",
-  ];
-
   const Sharpness = (sharpness) => {
     const colors = [];
     for (const [key, value] of Object.entries(sharpness)) {
@@ -39,20 +26,20 @@ function WeaponInfo({ info }) {
   };
 
   return (
-    <div className="Details">
+    <div className="InfoDetails">
       <div className="InfoIntroduction">
         <div className="InfoName">
           <div className="InfoIcon">
             <div
               className="InfoIconBorder"
               style={{
-                "border-color": rarityColor[info.rarity - 1],
+                borderColor: rarityColor[info.rarity - 1],
               }}
             />
             <div
               className="InfoIconGlow"
               style={{
-                "box-shadow": `inset 0px 0px 3px 3px ${
+                boxShadow: `inset 0px 0px 3px 3px ${
                   rarityColor[info.rarity - 1]
                 }`,
               }}
@@ -74,10 +61,7 @@ function WeaponInfo({ info }) {
       <div className="AllInfoStats">
         <div className="InfoStat">
           <div className="InfoType">
-            <img
-              src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-attack.png"
-              alt=""
-            />
+            <img src={getStatIcon("attack")} alt="" />
             <h2>Attack</h2>
           </div>
           <div className="InfoValue">
@@ -86,10 +70,7 @@ function WeaponInfo({ info }) {
         </div>
         <div className="InfoStat">
           <div className="InfoType">
-            <img
-              src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-sharpness.png"
-              alt=""
-            />
+            <img src={getStatIcon("sharpness")} alt="" />
             <h2>Sharpness</h2>
           </div>
           <div className="InfoValue">
@@ -99,10 +80,7 @@ function WeaponInfo({ info }) {
       </div>
       <div className="InfoStat">
         <div className="InfoType">
-          <img
-            src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-affinity.png"
-            alt=""
-          />
+          <img src={getStatIcon("affinity")} alt="" />
           <h2>Affinity</h2>
         </div>
         <div className="InfoValue">
@@ -113,10 +91,7 @@ function WeaponInfo({ info }) {
       </div>
       <div className="InfoStat">
         <div className="InfoType">
-          <img
-            src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-element-damage.png"
-            alt=""
-          />
+          <img src={getStatIcon("element")} alt="" />
           <h2>Element</h2>
         </div>
         <div className="InfoValue">
@@ -132,7 +107,7 @@ function WeaponInfo({ info }) {
               >
                 <img
                   className="ElementIcon"
-                  src={getWeaponTypeIcon(info.elements[0].type)}
+                  src={getElementType(info.elements[0].type)}
                   alt=""
                 />
                 {info.elements[0].type.slice(0, 1).toUpperCase() +
@@ -156,10 +131,7 @@ function WeaponInfo({ info }) {
       {info.elderseal ? (
         <div className="InfoStat">
           <div className="InfoType">
-            <img
-              src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/elderseal_icon.png"
-              alt=""
-            />
+            <img src={getStatIcon("elderseal")} alt="" />
             <h2>Elderseal</h2>
           </div>
           <div className="InfoValue">
@@ -187,7 +159,7 @@ function WeaponInfo({ info }) {
               >
                 <img
                   className="ElementIcon"
-                  src={getWeaponTypeIcon(info.elements[1].type)}
+                  src={getElementType(info.elements[1].type)}
                   alt=""
                 />
                 {info.elements[1].type.slice(0, 1).toUpperCase() +
@@ -215,10 +187,7 @@ function WeaponInfo({ info }) {
       )}
       <div className="InfoStat">
         <div className="InfoType">
-          <img
-            src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-decoration_s.png"
-            alt=""
-          />
+          <img src={getStatIcon("decoration")} alt="" />
           <h2>Slots</h2>
         </div>
         <div className="InfoValue">
@@ -237,10 +206,7 @@ function WeaponInfo({ info }) {
       </div>
       <div className="InfoStat">
         <div className="InfoType">
-          <img
-            src="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-defense_s.png"
-            alt=""
-          />
+          <img src={getStatIcon("defense")} alt="" />
           <h2>Defense</h2>
         </div>
         <div className="InfoValue">
@@ -248,9 +214,6 @@ function WeaponInfo({ info }) {
             {info.attributes.defense ? `${info.attributes.defense}` : "-"}
           </h2>
         </div>
-      </div>
-      <div className="InfoSkills">
-        <h1>Skills</h1>
       </div>
     </div>
   );

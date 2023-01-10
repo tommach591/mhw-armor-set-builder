@@ -1,4 +1,4 @@
-import { getIcon } from "../../utils/Icon";
+import { getArmorIcon } from "../../utils/Icon";
 import Missing from "../../assets/Missing.png";
 import "./Armor.css";
 
@@ -11,7 +11,7 @@ function Armor({ armorObj, handleSetInfo }) {
     <div className="Armor" onMouseOver={() => handleMouseOver()}>
       <div className={`Rarity${armorObj.rarity}`} />
       <img
-        src={getIcon(armorObj.type, armorObj.rarity)}
+        src={getArmorIcon(armorObj.type, armorObj.rarity)}
         alt={armorObj.rarity}
       />
     </div>

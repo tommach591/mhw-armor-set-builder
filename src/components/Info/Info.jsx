@@ -1,3 +1,6 @@
+import ArmorInfo from "../ArmorInfo";
+import CharmInfo from "../CharmInfo/CharmInfo";
+import DecorationInfo from "../DecorationInfo/DecorationInfo";
 import WeaponInfo from "../WeaponInfo";
 import "./Info.css";
 
@@ -7,19 +10,15 @@ function Info({ infoType, info }) {
       case "weapon":
         return <WeaponInfo info={info} />;
       case "armor":
-        return ArmorInfo();
+        return <ArmorInfo info={info} />;
       case "charm":
-        return CharmInfo();
+        return <CharmInfo info={info} />;
       case "decoration":
-        return DecorationInfo();
+        return <DecorationInfo info={info} />;
       default:
         return;
     }
   };
-
-  const ArmorInfo = () => {};
-  const CharmInfo = () => {};
-  const DecorationInfo = () => {};
 
   return info ? (
     <div className="Info">

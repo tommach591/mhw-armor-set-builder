@@ -89,7 +89,7 @@ const TALISMAN = [
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/2/2e/Talisman_Icon_Light_Grey.png",
 ];
 
-export function getIcon(type, rarity) {
+export function getArmorIcon(type, rarity) {
   switch (type) {
     case "head":
       return HELMET[rarity - 1];
@@ -148,46 +148,46 @@ export function getWeaponIcon(type, rarity) {
     return `https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/rare-${rarity}-mhw-${renamedType}-wiki.png`;
 }
 
-const weaponTypes = new Map();
-weaponTypes.set(
+const elementTypes = new Map();
+elementTypes.set(
   "fire",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/fireblight.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "water",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/waterblight.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "thunder",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/thunderblight.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "ice",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Iceblight.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "dragon",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/DragonBlight.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "poison",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Poison.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "paralysis",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Paralysis.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "sleep",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Sleep.png"
 );
-weaponTypes.set(
+elementTypes.set(
   "blast",
   "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/Blastblight.png"
 );
 
-export function getWeaponTypeIcon(type) {
-  return weaponTypes.get(type);
+export function getElementType(type) {
+  return elementTypes.get(type);
 }
 
 export function getSlotIcon(level) {
@@ -203,4 +203,53 @@ export function getSlotIcon(level) {
     default:
       return "";
   }
+}
+
+const statIcons = new Map();
+statIcons.set(
+  "attack",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-attack.png"
+);
+statIcons.set(
+  "sharpness",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-sharpness.png"
+);
+statIcons.set(
+  "affinity",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-affinity.png"
+);
+statIcons.set(
+  "element",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-element-damage.png"
+);
+statIcons.set(
+  "elderseal",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/elderseal_icon.png"
+);
+statIcons.set(
+  "decoration",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-decoration_s.png"
+);
+statIcons.set(
+  "defense",
+  "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-defense_s.png"
+);
+
+export const rarityColor = [
+  "white",
+  "white",
+  "rgb(162,187,70)",
+  "rgb(89,153,106)",
+  "rgb(156,223,248)",
+  "rgb(103,100,215)",
+  "rgb(114,29,124)",
+  "rgb(198,121,74)",
+  "rgb(190,66,74)",
+  "rgb(79,210,245)",
+  "rgb(203,165,82)",
+  "rgb(212,237,249)",
+];
+
+export function getStatIcon(type) {
+  return statIcons.get(type);
 }

@@ -1,4 +1,4 @@
-import { getIcon } from "../../utils/Icon";
+import { getArmorIcon } from "../../utils/Icon";
 import "./Charm.css";
 
 function Charm({ charmObj, handleSetInfo }) {
@@ -10,7 +10,7 @@ function Charm({ charmObj, handleSetInfo }) {
     <div className="Charm" onMouseOver={() => handleMouseOver()}>
       <div className="CharmIcon">
         <div className={`Rarity${charmObj.rarity}`} />
-        <img src={getIcon("charm", charmObj.rarity)} alt="" />
+        <img src={getArmorIcon("charm", charmObj.rarity)} alt="" />
       </div>
       <div className="CharmName">
         <h1>{charmObj.name}</h1>
