@@ -1,13 +1,22 @@
+import { useCharmUpdate } from "../../utils/HunterContext";
 import { getArmorIcon } from "../../utils/Icon";
 import "./Charm.css";
 
 function Charm({ charmObj, handleSetInfo }) {
+  const handleSetCharm = useCharmUpdate();
+
   const handleMouseOver = () => {
     handleSetInfo("charm", charmObj);
   };
 
   return (
-    <div className="Charm" onMouseOver={() => handleMouseOver()}>
+    <div
+      className="Charm"
+      onMouseOver={() => handleMouseOver()}
+      onClick={() => {
+        handleSetCharm(charmObj);
+      }}
+    >
       <div className="CharmIcon">
         <div className={`Rarity${charmObj.rarity}`} />
         <img src={getArmorIcon("charm", charmObj.rarity)} alt="" />

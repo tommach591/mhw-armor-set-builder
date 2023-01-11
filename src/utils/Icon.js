@@ -205,6 +205,21 @@ export function getSlotIcon(level) {
   }
 }
 
+export function getDecorationIcon(level) {
+  switch (level) {
+    case 1:
+      return "https://cdn.kiranico.net/file/mhworld-kiranico/images/itm/icon/66_0.png";
+    case 2:
+      return "https://cdn.kiranico.net/file/mhworld-kiranico/images/itm/icon/67_0.png";
+    case 3:
+      return "https://cdn.kiranico.net/file/mhworld-kiranico/images/itm/icon/68_0.png";
+    case 4:
+      return "https://cdn.kiranico.net/file/mhworld-kiranico/images/itm/icon/72_0.png";
+    default:
+      return "";
+  }
+}
+
 const statIcons = new Map();
 statIcons.set(
   "attack",

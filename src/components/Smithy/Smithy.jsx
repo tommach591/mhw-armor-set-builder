@@ -11,7 +11,7 @@ function Smithy({ handleSetInfo }) {
   const CHARM = "charm";
   const DECORATION = "decoration";
 
-  const [tab, setTab] = useState(ARMOR);
+  const [tab, setTab] = useState(WEAPON);
 
   const displaySmithy = () => {
     switch (tab) {

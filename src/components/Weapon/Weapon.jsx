@@ -1,7 +1,10 @@
+import { useWeaponUpdate } from "../../utils/HunterContext";
 import { getWeaponIcon, getElementType, getSlotIcon } from "../../utils/Icon";
 import "./Weapon.css";
 
 function Weapon({ weaponObj, handleSetInfo }) {
+  const handleSetWeapon = useWeaponUpdate();
+
   const handleMouseOver = () => {
     handleSetInfo("weapon", weaponObj);
   };
@@ -99,14 +102,17 @@ function Weapon({ weaponObj, handleSetInfo }) {
   }
 
   return (
-    <div className="Weapon" onMouseOver={() => handleMouseOver()}>
+    <div
+      className="Weapon"
+      onMouseOver={() => handleMouseOver()}
+      onClick={() => {
+        handleSetWeapon(weaponObj);
+      }}
+    >
       <div className="WeaponName">{weaponObj.name}</div>
       <div className="WeaponStats">
         <div className="WeaponIcon">
-          <img
-            src={getWeaponIcon(weaponObj.type, weaponObj.rarity)}
-            alt={weaponObj.rarity}
-          />
+          <img src={getWeaponIcon(weaponObj.type, weaponObj.rarity)} alt="" />
         </div>
         <div className="WeaponLeft">
           <div className="WeaponAtk">

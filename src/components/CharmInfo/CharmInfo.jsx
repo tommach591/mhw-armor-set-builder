@@ -1,47 +1,8 @@
-import { useSkills } from "../../utils/ArmoryContext";
 import { getArmorIcon, rarityColor } from "../../utils/Icon";
+import Skills from "../Skills";
 import "./CharmInfo.css";
 
 function CharmInfo({ info }) {
-  const skills = useSkills();
-
-  const Ranks = (skillName, level) => {
-    const ranks = [];
-    let skill = skills.find((skill) => skill.name === skillName);
-    if (skill) {
-      for (let i = 0; i < skill.ranks.length; i++) {
-        ranks.push(
-          skill.ranks[i].level <= level ? (
-            <div className="SkillRank Filled" key={i} />
-          ) : (
-            <div className="SkillRank Empty" key={i} />
-          )
-        );
-      }
-    }
-    return ranks;
-  };
-
-  const Skills = () => {
-    const skills = [];
-
-    for (let i = 0; i < info.skills.length; i++) {
-      skills.push(
-        <div className="InfoSkill" key={i}>
-          <h1 className="SkillName">{info.skills[i].skillName}</h1>
-          <div className="SkillLevel">
-            <div className="SkillSlotRank">
-              {Ranks(info.skills[i].skillName, info.skills[i].level)}
-            </div>
-            <h1 className="SkillSlotLevel">{`Level ${info.skills[i].level}`}</h1>
-          </div>
-        </div>
-      );
-    }
-
-    return skills;
-  };
-
   return (
     <div className="InfoDetails">
       <div className="InfoIntroduction">
@@ -72,7 +33,9 @@ function CharmInfo({ info }) {
           <h2>{`Rarity ${info.rarity}`}</h2>
         </div>
       </div>
-      <div className="AllInfoSkills">{Skills()}</div>
+      <div className="AllInfoSkills">
+        <Skills equipmentSkills={info.skills} />
+      </div>
     </div>
   );
 }

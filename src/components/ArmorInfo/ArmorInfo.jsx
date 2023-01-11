@@ -1,4 +1,3 @@
-import { useSkills } from "../../utils/ArmoryContext";
 import {
   getArmorIcon,
   getSlotIcon,
@@ -6,11 +5,11 @@ import {
   getElementType,
   rarityColor,
 } from "../../utils/Icon";
+import { GreekReplacer } from "../../utils/TextDecorator";
+import Skills from "../Skills";
 import "./ArmorInfo.css";
 
 function ArmorInfo({ info }) {
-  const skills = useSkills();
-
   const Resistances = () => {
     const resistances = [];
     Object.entries(info.resistances).forEach(([key, value]) => {
@@ -28,43 +27,6 @@ function ArmorInfo({ info }) {
     });
 
     return resistances;
-  };
-
-  const Ranks = (skillName, level) => {
-    const ranks = [];
-    let skill = skills.find((skill) => skill.name === skillName);
-    if (skill) {
-      for (let i = 0; i < skill.ranks.length; i++) {
-        ranks.push(
-          skill.ranks[i].level <= level ? (
-            <div className="SkillRank Filled" key={i} />
-          ) : (
-            <div className="SkillRank Empty" key={i} />
-          )
-        );
-      }
-    }
-    return ranks;
-  };
-
-  const Skills = () => {
-    const skills = [];
-
-    for (let i = 0; i < info.skills.length; i++) {
-      skills.push(
-        <div className="InfoSkill" key={i}>
-          <h1 className="SkillName">{info.skills[i].skillName}</h1>
-          <div className="SkillLevel">
-            <div className="SkillSlotRank">
-              {Ranks(info.skills[i].skillName, info.skills[i].level)}
-            </div>
-            <h1 className="SkillSlotLevel">{`Level ${info.skills[i].level}`}</h1>
-          </div>
-        </div>
-      );
-    }
-
-    return skills;
   };
 
   return (
@@ -86,9 +48,9 @@ function ArmorInfo({ info }) {
                 }`,
               }}
             />
-            <img src={getArmorIcon(info.type, info.rarity)} alt={info.rarity} />
+            <img src={getArmorIcon(info.type, info.rarity)} alt="" />
           </div>
-          <h1>{info.name}</h1>
+          <h1>{GreekReplacer(info.name)}</h1>
         </div>
         <div
           className="InfoRarity"
@@ -101,10 +63,10 @@ function ArmorInfo({ info }) {
         <div className="InfoStat">
           <div className="InfoType">
             <img src={getStatIcon("defense")} alt="" />
-            <h2>Max Defense</h2>
+            <h2>Defense</h2>
           </div>
           <div className="InfoValue">
-            <h2>{info.defense.augmented}</h2>
+            <h2>{info.defense.base}</h2>
           </div>
         </div>
         <div className="InfoStat">
@@ -132,7 +94,7 @@ function ArmorInfo({ info }) {
         <div className="InfoSkillsTitle">
           <h1>Skills</h1>
         </div>
-        {Skills()}
+        <Skills equipmentSkills={info.skills} />
       </div>
     </div>
   );

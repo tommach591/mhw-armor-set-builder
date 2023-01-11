@@ -6,6 +6,7 @@ import {
   useMasterArmor,
 } from "../../utils/ArmoryContext";
 import Armor from "../Armor";
+import { GreekReplacer } from "../../utils/TextDecorator";
 
 function Armory({ handleSetInfo }) {
   const lowArmor = useLowArmor();
@@ -67,7 +68,7 @@ function Armory({ handleSetInfo }) {
         {display.map((set, i) => {
           return (
             <div className="Set" key={i}>
-              <h1 className="SetName">{set.name}</h1>
+              <h1 className="SetName">{GreekReplacer(set.name)}</h1>
               {getSetRow(set.pieces)}
             </div>
           );
