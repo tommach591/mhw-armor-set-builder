@@ -178,6 +178,28 @@
 
   font-size: 32px;
   color: gray;
+
+  margin-bottom: 0.25rem;
+}
+
+.InfoDecoration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.InfoEmptySlot {
+  width: 100%;
+  height: 100%;
+}
+
+.InfoFilledSlot {
+  width: 100%;
+  height: 95%;
+
+  position: absolute;
+  left: 0rem;
+  top: 4px;
 }
 
 .AllInfoSkills {

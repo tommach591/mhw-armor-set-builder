@@ -41,6 +41,10 @@
   align-items: center;
 }
 
+.EquippedIntroduction:hover {
+  cursor: pointer;
+}
+
 .EquippedPieceName {
   height: 2rem;
 

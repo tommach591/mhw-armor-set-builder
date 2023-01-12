@@ -4,10 +4,36 @@ import {
   getWeaponIcon,
   getElementType,
   rarityColor,
+  getDecorationIcon,
 } from "../../utils/Icon";
+import Skills from "../Skills";
 import "./WeaponInfo.css";
 
 function WeaponInfo({ info }) {
+  const getSkills = () => {
+    let skills = [];
+
+    for (let i = 0; i < info.slots.length; i++) {
+      if (info.slots[i].decoration) {
+        for (let j = 0; j < info.slots[i].decoration.skills.length; j++) {
+          let index = skills.findIndex(
+            (skill) => skill.id === info.slots[i].decoration.skills[j].id
+          );
+
+          if (index === -1) {
+            skills.push(
+              JSON.parse(JSON.stringify(info.slots[i].decoration.skills[j]))
+            );
+          } else {
+            skills[index].level += info.slots[i].decoration.skills[j].level;
+          }
+        }
+      }
+    }
+
+    return skills;
+  };
+
   const Sharpness = (sharpness) => {
     const colors = [];
     for (const [key, value] of Object.entries(sharpness)) {
@@ -194,7 +220,28 @@ function WeaponInfo({ info }) {
           {[...Array(3)].map((i, j) => {
             return j < info.slots.length ? (
               <div className="InfoSlots" key={j}>
-                <img src={getSlotIcon(info.slots[j].rank)} alt="" />
+                {info.slots[j].decoration ? (
+                  <div className="InfoDecoration">
+                    <img
+                      className="InfoEmptySlot"
+                      src={getSlotIcon(info.slots[j].rank)}
+                      alt=""
+                    />
+                    <img
+                      className="InfoFilledSlot"
+                      src={getDecorationIcon(info.slots[j].decoration.slot)}
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <div className="InfoDecoration">
+                    <img
+                      className="InfoEmptySlot"
+                      src={getSlotIcon(info.slots[j].rank)}
+                      alt=""
+                    />
+                  </div>
+                )}
               </div>
             ) : (
               <div className="InfoSlots" key={j}>
@@ -214,6 +261,12 @@ function WeaponInfo({ info }) {
             {info.attributes.defense ? `${info.attributes.defense}` : "-"}
           </h2>
         </div>
+      </div>
+      <div className="AllInfoSkills">
+        <div className="InfoSkillsTitle">
+          <h1>Skills</h1>
+        </div>
+        <Skills equipmentSkills={getSkills()} />
       </div>
     </div>
   );

@@ -14,8 +14,9 @@ import {
   useWeapon,
   useWeaponUpdate,
 } from "../../utils/HunterContext";
-import { getArmorIcon, getSlotIcon, getWeaponIcon } from "../../utils/Icon";
+import { getArmorIcon, getWeaponIcon } from "../../utils/Icon";
 import { GreekReplacer } from "../../utils/TextDecorator";
+import EquippedSlot from "../EquippedSlot";
 import "./Equipped.css";
 
 function Equipped({ handleSetInfo }) {
@@ -63,7 +64,41 @@ function Equipped({ handleSetInfo }) {
     }
   };
 
-  const NoEquipment = () => {
+  const handleSetDecoration = (type, obj, index, decoration) => {
+    if (obj.slots[index].rank < decoration.slot) return;
+    let temp = JSON.parse(JSON.stringify(obj));
+    if (Object.keys(decoration).length === 0)
+      delete temp.slots[index].decoration;
+    else temp.slots[index].decoration = JSON.parse(JSON.stringify(decoration));
+
+    switch (type) {
+      case "weapon":
+        handleSetWeapon(temp);
+        break;
+      case "head":
+        handleSetHead(temp);
+        break;
+      case "chest":
+        handleSetChest(temp);
+        break;
+      case "gloves":
+        handleSetGloves(temp);
+        break;
+      case "waist":
+        handleSetWaist(temp);
+        break;
+      case "legs":
+        handleSetLegs(temp);
+        break;
+      case "charm":
+        handleSetCharm(temp);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const NoEquipment = (type) => {
     return (
       <div className="EquippedPiece">
         <div className="EquippedIntroduction">
@@ -72,33 +107,37 @@ function Equipped({ handleSetInfo }) {
             No Equipment
           </h1>
         </div>
-        <div className="EquippedSlots">
-          {[...Array(3)].map((i, j) => {
-            return (
-              <div className="InfoSlots" key={j}>
-                -
-              </div>
-            );
-          })}
-        </div>
+        {type !== "charm" ? (
+          <div className="EquippedSlots">
+            {[...Array(3)].map((i, j) => {
+              return (
+                <div className="EquippedSlot" key={j}>
+                  <div className="SetDecoration">-</div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div />
+        )}
       </div>
     );
   };
 
   const EquippedPiece = (type, obj) => {
     return (
-      <div
-        className="EquippedPiece"
-        onMouseOver={() => {
-          type === "weapon" || type === "charm"
-            ? handleSetInfo(type, obj)
-            : handleSetInfo("armor", obj);
-        }}
-        onClick={() => {
-          handleUnequip(type);
-        }}
-      >
-        <div className="EquippedIntroduction">
+      <div className="EquippedPiece">
+        <div
+          className="EquippedIntroduction"
+          onMouseOver={() => {
+            type === "weapon" || type === "charm"
+              ? handleSetInfo(type, obj)
+              : handleSetInfo("armor", obj);
+          }}
+          onClick={() => {
+            handleUnequip(type);
+          }}
+        >
           <div className="EquippedPieceIcon">
             <img
               src={
@@ -114,14 +153,15 @@ function Equipped({ handleSetInfo }) {
         {type !== "charm" ? (
           <div className="EquippedSlots">
             {[...Array(3)].map((i, j) => {
-              return j < obj.slots.length ? (
-                <div className="InfoSlots" key={j}>
-                  <img src={getSlotIcon(obj.slots[j].rank)} alt="" />
-                </div>
-              ) : (
-                <div className="InfoSlots" key={j}>
-                  -
-                </div>
+              return (
+                <EquippedSlot
+                  key={j}
+                  type={type}
+                  obj={obj}
+                  index={j}
+                  handleSetDecoration={handleSetDecoration}
+                  handleSetInfo={handleSetInfo}
+                />
               );
             })}
           </div>
@@ -137,24 +177,13 @@ function Equipped({ handleSetInfo }) {
       <div className="EquippedTitle">
         <h1>Equipped</h1>
       </div>
-      {weapon.name ? EquippedPiece("weapon", weapon) : NoEquipment()}
-      {head.name ? EquippedPiece("head", head) : NoEquipment()}
-      {chest.name ? EquippedPiece("chest", chest) : NoEquipment()}
-      {gloves.name ? EquippedPiece("gloves", gloves) : NoEquipment()}
-      {waist.name ? EquippedPiece("waist", waist) : NoEquipment()}
-      {legs.name ? EquippedPiece("legs", legs) : NoEquipment()}
-      {charm.name ? (
-        EquippedPiece("charm", charm)
-      ) : (
-        <div className="EquippedPiece">
-          <div className="EquippedIntroduction">
-            <div className="EquippedPieceIcon" />
-            <h1 className="EquippedPieceName" style={{ color: "gray" }}>
-              No Equipment
-            </h1>
-          </div>
-        </div>
-      )}
+      {weapon.name ? EquippedPiece("weapon", weapon) : NoEquipment("weapon")}
+      {head.name ? EquippedPiece("head", head) : NoEquipment("head")}
+      {chest.name ? EquippedPiece("chest", chest) : NoEquipment("chest")}
+      {gloves.name ? EquippedPiece("gloves", gloves) : NoEquipment("gloves")}
+      {waist.name ? EquippedPiece("waist", waist) : NoEquipment("waist")}
+      {legs.name ? EquippedPiece("legs", legs) : NoEquipment("legs")}
+      {charm.name ? EquippedPiece("charm", charm) : NoEquipment("charm")}
     </div>
   );
 }

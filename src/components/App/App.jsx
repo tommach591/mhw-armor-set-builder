@@ -2,7 +2,7 @@ import "./App.css";
 import { useDoneLoading } from "../../utils/ArmoryContext";
 import Smithy from "../Smithy";
 import Wallpaper from "../Wallpaper";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Info from "../Info";
 import Equipped from "../Equipped";
 
@@ -12,10 +12,6 @@ function App() {
   const [info, setInfo] = useState();
   const loadingGif =
     "https://media.tenor.com/_w-E_dXPA8MAAAAC/monster-hunter-ice-borne.gif";
-
-  useEffect(() => {
-    console.log(infoType, info);
-  }, [info, infoType]);
 
   const handleSetInfo = (type, obj) => {
     setInfoType(type);
