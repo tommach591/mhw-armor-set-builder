@@ -16,6 +16,11 @@ function EquippedSlot({
       drop: (item, monitor) => {
         handleSetDecoration(type, obj, index, item.decoration);
       },
+      collect: (monitor) => {
+        return {
+          highlight: monitor.canDrop(),
+        };
+      },
     }),
     [obj]
   );
@@ -38,6 +43,7 @@ function EquippedSlot({
               handleSetInfo("decoration", obj.slots[index].decoration);
             }}
           />
+          {collectedProps.highlight ? <div className="Highlight" /> : <div />}
         </div>
       ) : (
         <div className="SetDecoration" ref={dropRef}>
@@ -46,6 +52,7 @@ function EquippedSlot({
             src={getSlotIcon(obj.slots[index].rank)}
             alt=""
           />
+          {collectedProps.highlight ? <div className="Highlight" /> : <div />}
         </div>
       )}
     </div>

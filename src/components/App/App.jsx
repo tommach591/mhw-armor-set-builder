@@ -5,11 +5,13 @@ import Wallpaper from "../Wallpaper";
 import { useState } from "react";
 import Info from "../Info";
 import Equipped from "../Equipped";
+import Status from "../Status";
 
 function App() {
   const doneLoading = useDoneLoading();
   const [infoType, setInfoType] = useState();
   const [info, setInfo] = useState();
+
   const loadingGif =
     "https://media.tenor.com/_w-E_dXPA8MAAAAC/monster-hunter-ice-borne.gif";
 
@@ -24,6 +26,7 @@ function App() {
       <Equipped handleSetInfo={handleSetInfo} />
       <Smithy handleSetInfo={handleSetInfo} />
       <Info infoType={infoType} info={info} />
+      <Status />
     </div>
   ) : (
     <div className="Loading">

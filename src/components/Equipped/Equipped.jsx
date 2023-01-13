@@ -184,6 +184,9 @@ function Equipped({ handleSetInfo }) {
       {waist.name ? EquippedPiece("waist", waist) : NoEquipment("waist")}
       {legs.name ? EquippedPiece("legs", legs) : NoEquipment("legs")}
       {charm.name ? EquippedPiece("charm", charm) : NoEquipment("charm")}
+      <div className="EquippedFooter">
+        <h1>Drag and drop decorations to set decorations</h1>
+      </div>
     </div>
   );
 }

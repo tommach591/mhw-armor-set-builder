@@ -17,13 +17,9 @@ function Decoration({ decorationObj, handleSetInfo }) {
   };
 
   return (
-    <div
-      className="Decoration"
-      onMouseOver={() => handleMouseOver()}
-      ref={dragRef}
-    >
+    <div className="Decoration" onMouseOver={() => handleMouseOver()}>
       <div className="DecorationIcon">
-        <img src={getDecorationIcon(decorationObj.slot)} alt="" />
+        <img src={getDecorationIcon(decorationObj.slot)} alt="" ref={dragRef} />
       </div>
       <div className="DecorationName">
         <h1>{decorationObj.name}</h1>

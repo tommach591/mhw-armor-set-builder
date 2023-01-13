@@ -1,0 +1,40 @@
+.SkillStatus {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1rem;
+}
+
+.SkillStatusTitle {
+  width: 100%;
+  height: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  color: white;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(87, 87, 87, 0),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87),
+    rgb(87, 87, 87, 0)
+  );
+}
+
+.SkillStatusSkills {
+  height: 15rem;
+  overflow-y: scroll;
+}

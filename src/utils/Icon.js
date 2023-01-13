@@ -41,7 +41,7 @@ const GLOVES = [
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/e/e4/Arm_Icon_Red.png",
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/f/f9/Arm_Icon_Sky_Blue.png",
   "https://static.wikia.nocookie.net/fanonmonsterhunter/images/3/3a/Arm_Icon_Yellow.png",
-  "https://static.wikia.nocookie.net/fanonmonsterhunter/images/c/cb/Chest_Icon_Light_Grey.png",
+  "https://static.wikia.nocookie.net/fanonmonsterhunter/images/4/40/Arm_Icon_Light_Grey.png",
 ];
 
 const WAIST = [
