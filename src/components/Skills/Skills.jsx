@@ -1,10 +1,12 @@
 import "./Skills.css";
 import { useSkills } from "../../utils/ArmoryContext";
 import { useState } from "react";
+import { useMobile } from "../../utils/useMobile";
 
 function Skills({ equipmentSkills }) {
   const skills = useSkills();
   const skillComponents = [];
+  const isMobile = useMobile();
 
   const [hoveredOn, setHoveredOn] = useState(false);
 
@@ -51,9 +53,13 @@ function Skills({ equipmentSkills }) {
               : equipmentSkills[i].skillName
           );
         }}
-        onMouseLeave={() => {
-          setHoveredOn("");
-        }}
+        onMouseLeave={
+          isMobile
+            ? () => {}
+            : () => {
+                setHoveredOn("");
+              }
+        }
       >
         {hoveredOn === equipmentSkills[i].skillName ? (
           <div className="SkillInfoDescription">

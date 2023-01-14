@@ -41,6 +41,9 @@
 }
 
 @media (max-width: 850px) {
+  .DefenseStatus {
+    margin-bottom: 1rem;
+  }
   .AllDefenseStats {
     height: 7.6rem;
   }
