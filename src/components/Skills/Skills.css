@@ -1,6 +1,51 @@
 .InfoSkill {
   width: 100%;
   height: 3rem;
+  color: white;
+
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.InfoSkill:hover {
+  cursor: pointer;
+}
+
+.SkillInfoDescription {
+  width: 100%;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.SkillInfoDescriptionName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.SkillInfoRank {
+  margin: 1rem;
+}
+
+.SkillName {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  font-size: 18px;
 
   background-image: linear-gradient(
     to right,
@@ -16,26 +61,17 @@
     rgb(87, 87, 87),
     rgb(87, 87, 87, 0)
   );
-  color: white;
-
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.SkillName {
-  margin: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 18px;
 }
 
 .SkillLevel {
+  width: 90%;
   height: 1.5rem;
   display: flex;
   align-items: center;
 
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
   background-image: linear-gradient(
     to right,
     rgb(25, 25, 25, 0),
@@ -50,11 +86,6 @@
     rgb(25, 25, 25),
     rgb(25, 25, 25, 0)
   );
-}
-
-.SkillLevel > * {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 .SkillSlotRank {
@@ -87,4 +118,19 @@
 
 .SkillSlotLevel {
   margin-left: auto;
+}
+
+@media (max-width: 850px) {
+  .InfoSkill {
+    height: 3rem;
+  }
+
+  .SkillName {
+    font-size: 14px;
+  }
+
+  .SkillLevel {
+    height: 1.5rem;
+    font-size: 14px;
+  }
 }

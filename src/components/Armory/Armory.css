@@ -57,3 +57,27 @@
   width: 12.5rem;
   color: white;
 }
+
+@media (max-width: 850px) {
+  .RankContainer {
+    height: 10%;
+  }
+
+  .Rank {
+    width: 28%;
+  }
+
+  .Rank > h2 {
+    font-size: 14px;
+  }
+
+  .ArmorSets {
+    height: 68%;
+  }
+
+  .SetName {
+    width: 8rem;
+    font-size: 12px;
+    color: white;
+  }
+}

@@ -1,4 +1,5 @@
 .Charm {
+  width: 91.5%;
   height: 5rem;
   display: flex;
   margin: 1rem;
@@ -19,7 +20,7 @@
 }
 
 .CharmIcon {
-  width: 2.5rem;
+  width: 5rem;
   height: 2.5rem;
 
   display: flex;
@@ -39,12 +40,12 @@
 }
 
 .CharmName {
-  width: 11rem;
+  width: 90%;
   color: white;
 }
 
 .CharmSkills {
-  width: 11rem;
+  width: 90%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -54,7 +55,7 @@
 }
 
 .CharmSkills > h2 {
-  width: 95%;
+  width: 90%;
   height: 1rem;
 
   display: flex;
@@ -82,4 +83,19 @@
     rgb(87, 87, 87),
     rgb(87, 87, 87, 0)
   );
+}
+
+@media (max-width: 850px) {
+  .CharmName {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .CharmSkills {
+    width: 80%;
+  }
+
+  .CharmSkills > h2 {
+    font-size: 14px;
+  }
 }

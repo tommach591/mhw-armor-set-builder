@@ -26,7 +26,7 @@ function DefenseStatus() {
   const legsEquipped = Object.keys(legs).length > 0;
 
   const getDefense = () => {
-    let defense = 0;
+    let defense = 1;
     defense +=
       weaponEquipped && weapon.attributes.defense
         ? weapon.attributes.defense
@@ -102,7 +102,7 @@ function DefenseStatus() {
       <div className="DefenseStatusTitle">
         <h1>Defense Status</h1>
       </div>
-      <div className="AllInfoStats">
+      <div className="AllDefenseStats">
         <div className="InfoStat">
           <div className="InfoType">
             <img src={getStatIcon("defense")} alt="" />

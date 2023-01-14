@@ -1,9 +1,12 @@
 import "./Skills.css";
 import { useSkills } from "../../utils/ArmoryContext";
+import { useState } from "react";
 
 function Skills({ equipmentSkills }) {
   const skills = useSkills();
   const skillComponents = [];
+
+  const [hoveredOn, setHoveredOn] = useState(false);
 
   const Ranks = (skill, level) => {
     const ranks = [];
@@ -19,12 +22,49 @@ function Skills({ equipmentSkills }) {
     return ranks;
   };
 
+  const SkillInfo = (foundSkill) => {
+    const skillInfo = [];
+
+    foundSkill.ranks.forEach((rank, i) => {
+      skillInfo.push(
+        <div className="SkillInfoRank" key={i}>
+          <h1>{`${rank.level}: ${rank.description}`}</h1>
+        </div>
+      );
+    });
+
+    return skillInfo;
+  };
+
   for (let i = 0; i < equipmentSkills.length; i++) {
     let foundSkill = skills.find(
       (skill) => skill.name === equipmentSkills[i].skillName
     );
     skillComponents.push(
-      <div className="InfoSkill" key={i}>
+      <div
+        className="InfoSkill"
+        key={i}
+        onClick={() => {
+          setHoveredOn(
+            equipmentSkills[i].skillName === hoveredOn
+              ? ""
+              : equipmentSkills[i].skillName
+          );
+        }}
+        onMouseLeave={() => {
+          setHoveredOn("");
+        }}
+      >
+        {hoveredOn === equipmentSkills[i].skillName ? (
+          <div className="SkillInfoDescription">
+            <div className="SkillInfoDescriptionName">
+              <h1>{equipmentSkills[i].skillName}</h1>
+            </div>
+            {SkillInfo(foundSkill)}
+          </div>
+        ) : (
+          <div />
+        )}
         <h1 className="SkillName">{equipmentSkills[i].skillName}</h1>
         <div className="SkillLevel">
           <div className="SkillSlotRank">

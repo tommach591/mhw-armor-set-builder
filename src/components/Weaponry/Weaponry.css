@@ -29,3 +29,13 @@
   padding-top: 0.95rem;
   padding-bottom: 0.95rem;
 }
+
+@media (max-width: 850px) {
+  .SelectWeaponType {
+    height: 10%;
+  }
+
+  .WeaponList {
+    height: 68%;
+  }
+}

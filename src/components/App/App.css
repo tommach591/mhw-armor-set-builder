@@ -10,6 +10,16 @@
   display: flex;
 }
 
+.AppContent {
+  width: 100%;
+  display: flex;
+}
+
+.AppInfo {
+  width: 100%;
+  display: flex;
+}
+
 .Loading {
   width: 100vw;
   height: 100vh;
@@ -31,4 +41,17 @@
 .Loading > img {
   height: 15rem;
   margin: 1rem;
+}
+
+@media (max-width: 850px) {
+  .App {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .AppContent {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
 }

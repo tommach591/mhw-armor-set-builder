@@ -67,7 +67,7 @@
 }
 
 .WeaponLeft {
-  width: 11rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,6 +77,7 @@
 }
 
 .WeaponAtk {
+  width: 95%;
   display: flex;
   color: white;
   padding-bottom: 0.1rem;
@@ -94,7 +95,7 @@
 }
 
 .AttackValue {
-  width: 6.5rem;
+  width: 100%;
   text-align: right;
 }
 
@@ -153,7 +154,7 @@
 }
 
 .WeaponRight {
-  width: 11rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -162,7 +163,7 @@
 }
 
 .Attribute {
-  width: 100%;
+  width: 95%;
   display: flex;
   color: white;
   padding-bottom: 0.1rem;
@@ -186,7 +187,7 @@
 }
 
 .Element {
-  width: 100%;
+  width: 95%;
   display: flex;
   color: white;
   padding-bottom: 0.1rem;

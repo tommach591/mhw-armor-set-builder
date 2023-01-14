@@ -24,4 +24,16 @@
   border-top: 1px solid white;
   padding-top: 0.95rem;
   padding-bottom: 0.95rem;
+
+  overflow-x: hidden;
+}
+
+@media (max-width: 850px) {
+  .DecorationShopTitle {
+    height: 10%;
+  }
+
+  .DecorationList {
+    height: 68%;
+  }
 }

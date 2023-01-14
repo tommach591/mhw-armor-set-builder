@@ -1,5 +1,5 @@
 .Info {
-  width: 20rem;
+  width: 17%;
   height: 50rem;
 
   position: relative;
@@ -13,7 +13,7 @@
 }
 
 .NoInfo {
-  width: 20rem;
+  width: 17%;
   height: 50rem;
 
   position: relative;
@@ -131,6 +131,7 @@
 }
 
 .AllInfoStats {
+  height: 18rem;
   display: flex;
   flex-direction: column;
 }
@@ -161,7 +162,7 @@
 }
 
 .InfoValue {
-  width: 9rem;
+  width: 51%;
   display: flex;
   justify-content: flex-end;
 
@@ -237,4 +238,78 @@
     rgb(87, 87, 87),
     rgb(87, 87, 87, 0)
   );
+}
+
+.InfoSkillsList {
+  height: 20rem;
+  overflow-y: scroll;
+}
+
+@media (max-width: 850px) {
+  .Info {
+    width: 90%;
+    height: 30rem;
+  }
+
+  .NoInfo {
+    width: 90%;
+    height: 30rem;
+  }
+
+  .InfoTitle {
+    width: 100%;
+    height: 2.5rem;
+    font-size: 16px;
+    margin-top: 0rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .InfoName {
+    height: 1.5rem;
+    font-size: 16px;
+  }
+
+  .InfoIcon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .InfoRarity {
+    font-size: 12px;
+  }
+
+  .AllInfoStats {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .InfoStat {
+    height: 1.25rem;
+    font-size: 12px;
+  }
+
+  .InfoType {
+    width: 50%;
+  }
+
+  .InfoType > img {
+    width: 1rem;
+  }
+
+  .InfoValue {
+    width: 50%;
+  }
+
+  .InfoSlots {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .InfoSkillsList {
+    height: 9.5rem;
+  }
 }

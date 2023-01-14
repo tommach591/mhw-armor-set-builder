@@ -140,7 +140,9 @@ function ArmorInfo({ info }) {
         <div className="InfoSkillsTitle">
           <h1>Skills</h1>
         </div>
-        <Skills equipmentSkills={getSkills()} />
+        <div className="InfoSkillsList">
+          <Skills equipmentSkills={getSkills()} />
+        </div>
       </div>
     </div>
   );

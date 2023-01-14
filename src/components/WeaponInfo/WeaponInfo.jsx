@@ -103,170 +103,173 @@ function WeaponInfo({ info }) {
             {info.durability ? Sharpness(info.durability[0]) : "-"}
           </div>
         </div>
-      </div>
-      <div className="InfoStat">
-        <div className="InfoType">
-          <img src={getStatIcon("affinity")} alt="" />
-          <h2>Affinity</h2>
-        </div>
-        <div className="InfoValue">
-          <h2>
-            {info.attributes.affinity ? `${info.attributes.affinity}%` : "-"}
-          </h2>
-        </div>
-      </div>
-      <div className="InfoStat">
-        <div className="InfoType">
-          <img src={getStatIcon("element")} alt="" />
-          <h2>Element</h2>
-        </div>
-        <div className="InfoValue">
-          {info.elements[0] ? (
-            <div className="InfoElement">
-              <h2
-                className="ElementType"
-                style={
-                  info.elements[0].hidden
-                    ? { color: "white" }
-                    : { color: "gray" }
-                }
-              >
-                <img
-                  className="ElementIcon"
-                  src={getElementType(info.elements[0].type)}
-                  alt=""
-                />
-                {info.elements[0].type.slice(0, 1).toUpperCase() +
-                  info.elements[0].type.slice(1)}
-              </h2>
-              <h2
-                style={
-                  info.elements[0].hidden
-                    ? { color: "white" }
-                    : { color: "gray" }
-                }
-              >
-                {info.elements[0].damage}
-              </h2>
-            </div>
-          ) : (
-            <h2>-</h2>
-          )}
-        </div>
-      </div>
-      {info.elderseal ? (
         <div className="InfoStat">
           <div className="InfoType">
-            <img src={getStatIcon("elderseal")} alt="" />
-            <h2>Elderseal</h2>
+            <img src={getStatIcon("affinity")} alt="" />
+            <h2>Affinity</h2>
           </div>
           <div className="InfoValue">
             <h2>
-              {info.elderseal.slice(0, 1).toUpperCase() +
-                info.elderseal.slice(1)}
+              {info.attributes.affinity ? `${info.attributes.affinity}%` : "-"}
             </h2>
           </div>
         </div>
-      ) : (
-        <div />
-      )}
-      {info.elements[1] ? (
         <div className="InfoStat">
-          <div className="InfoType" />
+          <div className="InfoType">
+            <img src={getStatIcon("element")} alt="" />
+            <h2>Element</h2>
+          </div>
           <div className="InfoValue">
-            <div className="InfoElement">
-              <h2
-                className="ElementType"
-                style={
-                  info.elements[1].hidden
-                    ? { color: "white" }
-                    : { color: "gray" }
-                }
-              >
-                <img
-                  className="ElementIcon"
-                  src={getElementType(info.elements[1].type)}
-                  alt=""
-                />
-                {info.elements[1].type.slice(0, 1).toUpperCase() +
-                  info.elements[1].type.slice(1)}
-              </h2>
-              <h2
-                style={
-                  info.elements[1].hidden
-                    ? { color: "white" }
-                    : { color: "gray" }
-                }
-              >
-                {info.elements[1].damage}
+            {info.elements[0] ? (
+              <div className="InfoElement">
+                <h2
+                  className="ElementType"
+                  style={
+                    info.elements[0].hidden
+                      ? { color: "white" }
+                      : { color: "gray" }
+                  }
+                >
+                  <img
+                    className="ElementIcon"
+                    src={getElementType(info.elements[0].type)}
+                    alt=""
+                  />
+                  {info.elements[0].type.slice(0, 1).toUpperCase() +
+                    info.elements[0].type.slice(1)}
+                </h2>
+                <h2
+                  style={
+                    info.elements[0].hidden
+                      ? { color: "white" }
+                      : { color: "gray" }
+                  }
+                >
+                  {info.elements[0].damage}
+                </h2>
+              </div>
+            ) : (
+              <h2>-</h2>
+            )}
+          </div>
+        </div>
+        {info.elderseal ? (
+          <div className="InfoStat">
+            <div className="InfoType">
+              <img src={getStatIcon("elderseal")} alt="" />
+              <h2>Elderseal</h2>
+            </div>
+            <div className="InfoValue">
+              <h2>
+                {info.elderseal.slice(0, 1).toUpperCase() +
+                  info.elderseal.slice(1)}
               </h2>
             </div>
           </div>
-        </div>
-      ) : (
-        <div />
-      )}
-      {!info.elements[1] && !info.elderseal ? (
-        <div className="InfoStat" />
-      ) : (
-        <div />
-      )}
-      <div className="InfoStat">
-        <div className="InfoType">
-          <img src={getStatIcon("decoration")} alt="" />
-          <h2>Slots</h2>
-        </div>
-        <div className="InfoValue">
-          {[...Array(3)].map((i, j) => {
-            return j < info.slots.length ? (
-              <div className="InfoSlots" key={j}>
-                {info.slots[j].decoration ? (
-                  <div className="InfoDecoration">
-                    <img
-                      className="InfoEmptySlot"
-                      src={getSlotIcon(info.slots[j].rank)}
-                      alt=""
-                    />
-                    <img
-                      className="InfoFilledSlot"
-                      src={getDecorationIcon(info.slots[j].decoration.slot)}
-                      alt=""
-                    />
-                  </div>
-                ) : (
-                  <div className="InfoDecoration">
-                    <img
-                      className="InfoEmptySlot"
-                      src={getSlotIcon(info.slots[j].rank)}
-                      alt=""
-                    />
-                  </div>
-                )}
+        ) : (
+          <div />
+        )}
+        {info.elements[1] ? (
+          <div className="InfoStat">
+            <div className="InfoType" />
+            <div className="InfoValue">
+              <div className="InfoElement">
+                <h2
+                  className="ElementType"
+                  style={
+                    info.elements[1].hidden
+                      ? { color: "white" }
+                      : { color: "gray" }
+                  }
+                >
+                  <img
+                    className="ElementIcon"
+                    src={getElementType(info.elements[1].type)}
+                    alt=""
+                  />
+                  {info.elements[1].type.slice(0, 1).toUpperCase() +
+                    info.elements[1].type.slice(1)}
+                </h2>
+                <h2
+                  style={
+                    info.elements[1].hidden
+                      ? { color: "white" }
+                      : { color: "gray" }
+                  }
+                >
+                  {info.elements[1].damage}
+                </h2>
               </div>
-            ) : (
-              <div className="InfoSlots" key={j}>
-                -
-              </div>
-            );
-          })}
+            </div>
+          </div>
+        ) : (
+          <div />
+        )}
+        {!info.elements[1] && !info.elderseal ? (
+          <div className="InfoStat" />
+        ) : (
+          <div />
+        )}
+        <div className="InfoStat">
+          <div className="InfoType">
+            <img src={getStatIcon("decoration")} alt="" />
+            <h2>Slots</h2>
+          </div>
+          <div className="InfoValue">
+            {[...Array(3)].map((i, j) => {
+              return j < info.slots.length ? (
+                <div className="InfoSlots" key={j}>
+                  {info.slots[j].decoration ? (
+                    <div className="InfoDecoration">
+                      <img
+                        className="InfoEmptySlot"
+                        src={getSlotIcon(info.slots[j].rank)}
+                        alt=""
+                      />
+                      <img
+                        className="InfoFilledSlot"
+                        src={getDecorationIcon(info.slots[j].decoration.slot)}
+                        alt=""
+                      />
+                    </div>
+                  ) : (
+                    <div className="InfoDecoration">
+                      <img
+                        className="InfoEmptySlot"
+                        src={getSlotIcon(info.slots[j].rank)}
+                        alt=""
+                      />
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="InfoSlots" key={j}>
+                  -
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="InfoStat">
+          <div className="InfoType">
+            <img src={getStatIcon("defense")} alt="" />
+            <h2>Defense</h2>
+          </div>
+          <div className="InfoValue">
+            <h2>
+              {info.attributes.defense ? `${info.attributes.defense}` : "-"}
+            </h2>
+          </div>
         </div>
       </div>
-      <div className="InfoStat">
-        <div className="InfoType">
-          <img src={getStatIcon("defense")} alt="" />
-          <h2>Defense</h2>
-        </div>
-        <div className="InfoValue">
-          <h2>
-            {info.attributes.defense ? `${info.attributes.defense}` : "-"}
-          </h2>
-        </div>
-      </div>
+
       <div className="AllInfoSkills">
         <div className="InfoSkillsTitle">
           <h1>Skills</h1>
         </div>
-        <Skills equipmentSkills={getSkills()} />
+        <div className="InfoSkillsList">
+          <Skills equipmentSkills={getSkills()} />
+        </div>
       </div>
     </div>
   );

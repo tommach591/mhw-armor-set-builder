@@ -1,5 +1,5 @@
 .Smithy {
-  width: 30rem;
+  width: 24%;
   height: 50rem;
 
   position: relative;
@@ -113,4 +113,19 @@
 
 .Rarity12:hover {
   animation: Sparkle12 6s linear infinite;
+}
+
+@media (max-width: 850px) {
+  .Smithy {
+    width: 90%;
+    height: 15rem;
+  }
+
+  .Tab {
+    width: 20%;
+  }
+
+  .Tab > h2 {
+    font-size: 14px;
+  }
 }

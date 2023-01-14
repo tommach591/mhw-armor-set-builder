@@ -16,10 +16,11 @@ import {
 } from "../../utils/HunterContext";
 import { getArmorIcon, getWeaponIcon } from "../../utils/Icon";
 import { GreekReplacer } from "../../utils/TextDecorator";
+import { useMobile } from "../../utils/useMobile";
 import EquippedSlot from "../EquippedSlot";
 import "./Equipped.css";
 
-function Equipped({ handleSetInfo }) {
+function Equipped({ handleSetInfo, changeWindow }) {
   const weapon = useWeapon();
   const head = useHead();
   const chest = useChest();
@@ -35,6 +36,8 @@ function Equipped({ handleSetInfo }) {
   const handleSetWaist = useWaistUpdate();
   const handleSetLegs = useLegsUpdate();
   const handleSetCharm = useCharmUpdate();
+
+  const isMobile = useMobile();
 
   const handleUnequip = (type) => {
     switch (type) {
@@ -134,11 +137,13 @@ function Equipped({ handleSetInfo }) {
               ? handleSetInfo(type, obj)
               : handleSetInfo("armor", obj);
           }}
-          onClick={() => {
-            handleUnequip(type);
-          }}
         >
-          <div className="EquippedPieceIcon">
+          <div
+            className="EquippedPieceIcon"
+            onClick={() => {
+              handleUnequip(type);
+            }}
+          >
             <img
               src={
                 type === "weapon"
@@ -174,7 +179,12 @@ function Equipped({ handleSetInfo }) {
 
   return (
     <div className="Equipped">
-      <div className="EquippedTitle">
+      <div
+        className="EquippedTitle"
+        onClick={() => {
+          if (isMobile) changeWindow();
+        }}
+      >
         <h1>Equipped</h1>
       </div>
       {weapon.name ? EquippedPiece("weapon", weapon) : NoEquipment("weapon")}

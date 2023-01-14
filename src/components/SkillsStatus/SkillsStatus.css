@@ -36,5 +36,13 @@
 
 .SkillStatusSkills {
   height: 15rem;
+
   overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@media (max-width: 850px) {
+  .SkillStatusSkills {
+    height: 4rem;
+  }
 }

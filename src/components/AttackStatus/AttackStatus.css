@@ -33,3 +33,15 @@
     rgb(87, 87, 87, 0)
   );
 }
+
+.AllAttackStats {
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 850px) {
+  .AllAttackStats {
+    height: 7rem;
+  }
+}
