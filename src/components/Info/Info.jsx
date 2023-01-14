@@ -32,6 +32,7 @@ function Info({ infoType, info, changeWindow }) {
         }}
       >
         <h1>Equipment Info</h1>
+        {isMobile ? <div className="Right Arrow" /> : <div />}
       </div>
       {EquipInfo()}
     </div>
@@ -43,6 +44,7 @@ function Info({ infoType, info, changeWindow }) {
       }}
     >
       <h1>No Equipment</h1>
+      {isMobile ? <div className="Right Arrow" /> : <div />}
     </div>
   );
 }

@@ -15,6 +15,7 @@ function Status({ changeWindow }) {
         }}
       >
         <h1>Status</h1>
+        {isMobile ? <div className="Right Arrow" /> : <div />}
       </div>
       <AttackStatus />
       <DefenseStatus />

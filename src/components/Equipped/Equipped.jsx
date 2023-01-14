@@ -186,6 +186,7 @@ function Equipped({ handleSetInfo, changeWindow }) {
         }}
       >
         <h1>Equipped</h1>
+        {isMobile ? <div className="Right Arrow" /> : <div />}
       </div>
       {weapon.name ? EquippedPiece("weapon", weapon) : NoEquipment("weapon")}
       {head.name ? EquippedPiece("head", head) : NoEquipment("head")}
